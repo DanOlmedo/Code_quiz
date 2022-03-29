@@ -19,6 +19,7 @@ var secondQuestion = document.querySelector('.question2');
 var thirdQuestion = document.querySelector('.question3');
 var fourthQuestion = document.querySelector('.question4');
 var fifthQuestion = document.querySelector('.question5');
+var leaderboard = document.querySelector('.leaderboard');
 
 //Variables for score keeping:
 var answera1 = document.querySelector('#a1');
@@ -49,6 +50,9 @@ var topScores = [];
 var topScore1 = document.querySelector('#ts1');
 var topScore2 = document.querySelector('#ts2');
 var topScore3 = document.querySelector('#ts3');
+var topScoreName1 = document.querySelector('#tsn1');
+var topScoreName2 = document.querySelector('#tsn2');
+var topScoreName3 = document.querySelector('#tsn3');
 
 //Function to start quiz and timer: 
 startQuiz.addEventListener("click", function() {
@@ -71,7 +75,7 @@ startQuiz.addEventListener("click", function() {
           fifthQuestion.setAttribute('style','display:none;');
           scores.setAttribute('style','visibility:visible;');
         }
-      }, 250); 
+      }, 500); 
       scoreKeeper();
       console.log(currentScore);
       console.log(currentScore.length);
@@ -100,6 +104,7 @@ next4Buttons.addEventListener("click",function(){
 
 next5Buttons.addEventListener("click",function(){
     fifthQuestion.setAttribute('style','display:none;');
+    leaderboard.setAttribute('style','visibility:visible;');
     scores.setAttribute('style','visibility:visible;');
     timeLeft = secondsLeft;
     console.log(timeLeft);
@@ -110,6 +115,7 @@ next5Buttons.addEventListener("click",function(){
 
 finalButton.addEventListener("click",function(){
     fifthQuestion.setAttribute('style','display:none;');
+    leaderboard.setAttribute('style','visibility:visible;');
     scores.setAttribute('style','visibility:visible;');
     timeLeft = secondsLeft;
     timer.setAttribute("style", "visibility:hidden");
@@ -121,18 +127,31 @@ function setHighScores(){
     topScore1.textContent = localStorage.getItem("topScore1");
     topScore2.textContent = localStorage.getItem("topScore2");
     topScore3.textContent = localStorage.getItem("topScore3");
-    if(secondsLeft>localStorage.getItem("topScore1")){
-    topScore1.textContent = timeLeft;
-    localStorage.setItem("topScore1", secondsLeft);}
-    if (secondsLeft<localStorage.getItem("topScore1") && secondsLeft>localStorage.getItem("topScore2")){
-    topScore2.textContent = timeLeft;
-    localStorage.setItem("topScore2", secondsLeft);}
-    if (secondsLeft<localStorage.getItem("topScore2") && secondsLeft>localStorage.getItem("topScore3")){
+    topScoreName1.textContent = localStorage.getItem("topScoreName1");
+    topScoreName2.textContent = localStorage.getItem("topScoreName2");
+    topScoreName3.textContent = localStorage.getItem("topScoreName3");
+
+     if(secondsLeft>localStorage.getItem("topScore1")){
+       topScore1.textContent = timeLeft;
+       localStorage.setItem("topScore1", secondsLeft);
+       scorer1 = window.prompt("Please enter your name1")
+       localStorage.setItem("topScoreName1", scorer1);}
+
+     if (secondsLeft<localStorage.getItem("topScore1") && secondsLeft>localStorage.getItem("topScore2")){
+       topScore2.textContent = timeLeft;
+       localStorage.setItem("topScore2", secondsLeft);
+       scorer2 = window.prompt("Please enter your name2")
+       localStorage.setItem("topScoreName2", scorer2);}
+
+     if (secondsLeft<localStorage.getItem("topScore2") && secondsLeft>localStorage.getItem("topScore3")){
         topScore3.textContent = timeLeft;
-        localStorage.setItem("topScore3", secondsLeft);}
-    if(secondsLeft<localStorage.getItem("topScore3")){
+        localStorage.setItem("topScore3", secondsLeft);
+        scorer3 = window.prompt("Please enter your name3")
+        localStorage.setItem("topScoreName3", scorer3);}
+
+     if(secondsLeft<localStorage.getItem("topScore3")){
         alert("Your score did not crack the top three");
-    }
+     };
 };
 
 //Function for score keeping:
@@ -158,6 +177,3 @@ function scoreKeeper(){
     answere3.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
     answere4.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
 };
-
-var count = localStorage.getItem("count");
-localStorage.setItem("count", count);

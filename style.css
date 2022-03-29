@@ -184,4 +184,10 @@ p{
 .leaderboard ol{
     font-size: 2rem;
     color: black;
+    margin: 4rem;
+}
+
+.topScoreList{
+    display: flex;
+    flex-direction: row;
 }

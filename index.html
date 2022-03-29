@@ -12,6 +12,7 @@
   <h1>Welcome to a coding quiz challenge</h1>
    <p>When the "start" button is clicked, a timer with 1 minute will start. Every wrong answer will substract 10 seconds from the timer.</p>
    <p>Upon finishing you will be prompted for your initials and you will be able to see the high scores.</p>
+   <p>Your score will be the time left on the timer upon completion.</p>
  </header>
 
  <h2 id="timer">Time left: </h2>
@@ -81,11 +82,17 @@
  <div class="leaderboard">
     <h1>Top scores</h1>
     <p>Text area with top scores stored in local memory</p>
+    <p>Score to the left/user to the right</p>
     <div class="topScoreList">
         <ol>
             <li id="ts1"></li>
             <li id="ts2"></li>
             <li id="ts3"></li>
+        </ol>
+        <ol>
+          <li id="tsn1"></li>
+          <li id="tsn2"></li>
+          <li id="tsn3"></li>
         </ol>
       </div>
     <a href="./index.html"> <button class="retry" type="button">Retry test</button></a>
