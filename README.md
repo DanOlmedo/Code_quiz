@@ -80,9 +80,11 @@ This homework is graded based on the following criteria:
 
 You are required to submit BOTH of the following for review:
 
-* The URL of the functional, deployed application.
+* The URL of the functional, deployed application: https://danolmedo.github.io/code_quiz_homework/ 
 
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
+* The URL of the GitHub repository, with a unique name and a readme describing the project: https://github.com/DanOlmedo/code_quiz_homework/settings/pages
+
+![Coding quiz screenshot](./Assets/coding_quiz_homework.PNG "Coding quiz screenshot")
 
 ---
 
