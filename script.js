@@ -134,21 +134,21 @@ function setHighScores(){
      if(secondsLeft>localStorage.getItem("topScore1")){
        topScore1.textContent = timeLeft;
        localStorage.setItem("topScore1", secondsLeft);
-       scorer1 = window.prompt("Please enter your name1")
+       scorer1 = window.prompt("Please enter your name")
        localStorage.setItem("topScoreName1", scorer1);}
        topScoreName1.textContent = localStorage.getItem("topScoreName1");
 
      if (secondsLeft<localStorage.getItem("topScore1") && secondsLeft>localStorage.getItem("topScore2")){
        topScore2.textContent = timeLeft;
        localStorage.setItem("topScore2", secondsLeft);
-       scorer2 = window.prompt("Please enter your name2")
+       scorer2 = window.prompt("Please enter your name")
        localStorage.setItem("topScoreName2", scorer2);}
        topScoreName2.textContent = localStorage.getItem("topScoreName2");
 
      if (secondsLeft<localStorage.getItem("topScore2") && secondsLeft>localStorage.getItem("topScore3")){
         topScore3.textContent = timeLeft;
         localStorage.setItem("topScore3", secondsLeft);
-        scorer3 = window.prompt("Please enter your name3")
+        scorer3 = window.prompt("Please enter your name")
         localStorage.setItem("topScoreName3", scorer3);}
         topScoreName3.textContent = localStorage.getItem("topScoreName3");
 
