@@ -136,18 +136,21 @@ function setHighScores(){
        localStorage.setItem("topScore1", secondsLeft);
        scorer1 = window.prompt("Please enter your name1")
        localStorage.setItem("topScoreName1", scorer1);}
+       topScoreName1.textContent = localStorage.getItem("topScoreName1");
 
      if (secondsLeft<localStorage.getItem("topScore1") && secondsLeft>localStorage.getItem("topScore2")){
        topScore2.textContent = timeLeft;
        localStorage.setItem("topScore2", secondsLeft);
        scorer2 = window.prompt("Please enter your name2")
        localStorage.setItem("topScoreName2", scorer2);}
+       topScoreName2.textContent = localStorage.getItem("topScoreName2");
 
      if (secondsLeft<localStorage.getItem("topScore2") && secondsLeft>localStorage.getItem("topScore3")){
         topScore3.textContent = timeLeft;
         localStorage.setItem("topScore3", secondsLeft);
         scorer3 = window.prompt("Please enter your name3")
         localStorage.setItem("topScoreName3", scorer3);}
+        topScoreName3.textContent = localStorage.getItem("topScoreName3");
 
      if(secondsLeft<localStorage.getItem("topScore3")){
         alert("Your score did not crack the top three");
@@ -156,24 +159,24 @@ function setHighScores(){
 
 //Function for score keeping:
 function scoreKeeper(){
-    answera1.addEventListener("click",function(){currentScore.push(1);});
-    answera2.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
-    answera3.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
-    answera4.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
-    answerb1.addEventListener("click",function(){currentScore.push(1);});
-    answerb2.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
-    answerb3.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
-    answerb4.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
+    answera1.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
+    answera2.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
+    answera3.addEventListener("click",function(){currentScore.push(1);});
+    answera4.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
+    answerb1.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
+    answerb2.addEventListener("click",function(){currentScore.push(1);});
+    answerb3.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
+    answerb4.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
     answerc1.addEventListener("click",function(){currentScore.push(1);});
-    answerc2.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
-    answerc3.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
-    answerc4.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
-    answerd1.addEventListener("click",function(){currentScore.push(1);});
-    answerd2.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
-    answerd3.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
-    answerd4.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
+    answerc2.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
+    answerc3.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
+    answerc4.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
+    answerd1.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
+    answerd2.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
+    answerd3.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
+    answerd4.addEventListener("click",function(){currentScore.push(1);});
     answere1.addEventListener("click",function(){currentScore.push(1);});
-    answere2.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
-    answere3.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
-    answere4.addEventListener("click",function(){secondsLeft = secondsLeft-10; currentScore.push(2);});
+    answere2.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
+    answere3.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
+    answere4.addEventListener("click",function(){secondsLeft = secondsLeft-10;});
 };
