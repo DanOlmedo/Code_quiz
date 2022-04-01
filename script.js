@@ -2,7 +2,7 @@
 var startQuiz = document.querySelector("#start");
 var headerEl = document.querySelector('header');
 var timer = document.querySelector('#timer');
-var secondsLeft = 60;
+var secondsLeft = 10;
 var timeLeft;
 
 //Variables for question navigating:
@@ -54,6 +54,8 @@ var topScoreName1 = document.querySelector('#tsn1');
 var topScoreName2 = document.querySelector('#tsn2');
 var topScoreName3 = document.querySelector('#tsn3');
 
+var timerInterval;
+
 //Function to start quiz and timer: 
 startQuiz.addEventListener("click", function() {
     headerEl.setAttribute('style', 'display:none;');
@@ -61,13 +63,13 @@ startQuiz.addEventListener("click", function() {
     firstQuestion.setAttribute('style','visibility:visible;');
     timer.setAttribute("style", "visibility:visible");
 
-    var timerInterval = setInterval(function() {
+    timerInterval = setInterval(function() {
         secondsLeft--;
         timer.textContent = "Time left: " + secondsLeft;
 
         if(secondsLeft <= 0) {
-          clearInterval(timerInterval);
           alert('Times up');
+          clearInterval(timerInterval);
           firstQuestion.setAttribute('style','display:none;');
           secondQuestion.setAttribute('style','display:none;');
           thirdQuestion.setAttribute('style','display:none;');
@@ -75,7 +77,7 @@ startQuiz.addEventListener("click", function() {
           fifthQuestion.setAttribute('style','display:none;');
           scores.setAttribute('style','visibility:visible;');
         }
-      }, 500); 
+      }, 1000); 
       scoreKeeper();
       console.log(currentScore);
       console.log(currentScore.length);
@@ -103,6 +105,8 @@ next4Buttons.addEventListener("click",function(){
 });
 
 next5Buttons.addEventListener("click",function(){
+    clearInterval(timerInterval);
+    console.log('Time left' + secondsLeft);
     fifthQuestion.setAttribute('style','display:none;');
     leaderboard.setAttribute('style','visibility:visible;');
     scores.setAttribute('style','visibility:visible;');
