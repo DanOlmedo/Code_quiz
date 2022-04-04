@@ -2,8 +2,8 @@
 var startQuiz = document.querySelector("#start");
 var headerEl = document.querySelector('header');
 var timer = document.querySelector('#timer');
-var secondsLeft = 10;
 var timeLeft;
+var secondsLeft = 60;
 
 //Variables for question navigating:
 var next1Buttons = document.querySelector('.questionButtons1');
